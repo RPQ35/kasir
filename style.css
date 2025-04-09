@@ -1,0 +1,270 @@
+@keyframes poping{
+    0%{opacity:50% ;scale: 2%;transform: translateY(-15px);}
+    50%{scale: 100%;}
+}
+
+/* ------------ini untuk tampilan index------------ */
+body {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    button{cursor: pointer;}
+}
+
+nav {
+    display: flex;
+    background-color: #376a63;
+    height: 98vh;
+    width: 30vb;
+    max-width: 100%;
+    display: fixed;
+    flex-direction: column;
+    align-items: center;
+
+    section.up {
+        height: 34%;
+        width: 30vb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form.bottom {
+        border-top: 3px solid black;
+        height: 65%;
+        width: 30vb;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        button{height: 30%;width: 50%;background-position: center;background-repeat: no-repeat;background-size: 100%;background-color: transparent;border: none;}
+        button.leave{background-image: url('aset/log-out.png');}
+        button.data{background-image: url('aset/bar-chart.png');}
+        button.cashier{background-image: url("aset/cashier-machine.png");}
+    }
+
+    .hexagon {
+        height: 22vb;
+        aspect-ratio: cos(30deg);
+        clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+        background: #3B8686;
+        margin: 10px auto;
+    }
+}
+/* ==================================================== */
+
+/* nyempil semua dah intinya */
+main{
+    width: 80% ;
+    margin: 5vb 3vb 5vb 5vb;
+    display: flex;
+    flex-direction: row;
+
+
+table{
+    
+    margin: 0 5% 0 5%;
+    width: 80%;
+    border-collapse: collapse;
+    
+    td:nth-child(2),td:nth-child(3){
+        border-left: 2px solid rgba(0, 0, 0, 0.441);
+        border-right: 2px solid rgba(0, 0, 0, 0.441);
+    }
+    thead{
+        background-color:#376a63;
+        height:5vb;
+    }
+            tr.faker{background-color: transparent;height: 10px;}
+            .top-left{border-radius: 15px 0 0 15px;}
+            .top-right{border-radius: 0 15px 15px 0;}
+            
+            
+    tbody{background-color:#7dcb80;
+       
+        tr{height: 1vb;max-height: 1vb;}
+        .top-left{border-radius: 10px 0 0 0;}
+        .top-right{border-radius: 0 10px 0 0;}
+        .bottom-right{border-radius: 0 0 10px 0;}
+        .bottom-left{border-radius: 0 0 0 10px;}
+        td{text-align: center;}
+        td:nth-child(1){
+            form{display: flex;
+                align-items: center;
+                flex-direction: row;}
+            button{background-image: url("aset/left-arrow.png");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;}
+        }
+    }
+    tfoot{
+        font-size: 2vb;
+        font-weight: 20px;
+        text-align: center;
+        width: 100%;
+        height: 4%;
+        background-color: #376a63;
+        #code-in{
+                border-radius: 10px;
+                width: 80%;
+            }
+        
+     }
+    button{background-color: transparent;border: none;background-position: center;background-size: 100%;height: 3vb;width: 3vb;}
+    button.plus{background-image: url("aset/add.png");}
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width: 5%;
+    align-items: center;
+    justify-content: center; 
+   
+    form{display: flex;
+        flex-direction: column;
+        gap: 8vb;
+        width:max-content; height: 32vb; }
+   
+        button{
+            background-color: transparent;
+            border: none;
+            background-position: center;
+            background-size: 100%;
+            height: 12vb;width: 12vb;
+   
+        }
+    button.cancel-all{background-image: url("aset/prohibition.png");}
+    button.receipt{background-image: url("aset/bill.png");}
+    
+}
+
+}
+/* =================================================== */
+
+/* ---------------login page ------------------------- */
+div.alert{
+    background-color: #fdd744;
+    z-index: 4;
+    position:absolute;
+    top: 35%;left: 40%;right: 40%; bottom: 35%;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 10px 20px black;
+    font-size: 3vb;
+    height: 30vb;
+    width: 40vb;
+    text-align: center;
+    justify-content: space-around;
+    background-image: url("aset/warning.png");
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: poping .5s linear;
+
+    button{
+        background-color: #7dcb80;
+        border: none;
+        border-radius: 36px;
+        width: 20vb;
+        height: 5vb;
+        transform: translateY(3vb);
+    }
+}
+
+div.login_tab{
+        margin: 25vb auto;
+        display:flex ;
+        flex-direction: column;
+        align-items: center;
+        background-color: #376a63;
+        height: 50vb;
+        width: 60vb;
+        border-radius: 36px;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            width: 40vb;
+            height: 40vb;
+            input{
+                background-color: #7dcb80;width: 100%;
+                border-radius: 36px;padding: 5px;
+                height: 4vb;
+                font-size: 1.8vb;
+                border: none;
+            }
+            label{margin-top: 5vb;
+                    font-size: 2vb;
+                    transform: translateX(-5%);
+                    font-weight: bolder;
+                }
+            button{
+                border-radius: 36px;
+                height: 6vb;width: 20vb;
+                margin: 6vb auto 0 auto;
+                font-size: 2vb;font-weight: bolder;
+                background-color: #fdd744;
+                animation: poping .5s ease-out;
+
+            }
+            
+        }
+    }
+/* ==================================================== */
+
+/* ----------------data page--------------------------- */
+article{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10%;
+    
+    section.s1{
+        height: 20%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        div{
+            background-color: chartreuse;
+            height: 100%;
+            width: 35%;
+            border-radius: 35px;
+        }
+
+    }
+    section.s2{
+        height: 70%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+
+        table{
+            border-collapse: collapse;
+            width: 65%;
+            margin: 0;
+            height:100%;
+
+            td:nth-child(2),td:nth-child(3),td:nth-child(4),th:nth-child(2),th:nth-child(3),th:nth-child(4){
+                border-left: 2px solid rgba(0, 0, 0, 0.441);
+                border-right: 2px solid rgba(0, 0, 0, 0.441);
+            }
+        }
+      
+
+        div{
+            background-color:gray;
+            height: 100%;
+            width: 30%;
+        }
+
+    }
+
+}
+/* ======================================================= */
