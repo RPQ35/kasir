@@ -31,6 +31,63 @@ class Cahier_system{
         }
        }
 
-}
+    function inputer($connection,$produk_table_databases){
+        // =====================eror anjir ga ada ini
+        $SESSSION['yellow']=1;
+        // ==================================================
 
+        if($_SERVER['REQUEST_METHOD']==="POST"){
+            $input_code=$_POST['code_in'];
+            
+            if($SESSSION['yellow']!==null) {
+
+                $SESSSION['id_compare']=null;
+            if(is_array(unserialize($SESSSION['yellow']))){
+                $preparer=explode("!",$SESSSION['yellow']);
+                $index_compare=0;
+                foreach($preparer as $row){
+                    $row=unserialize($row);
+                    if($preparer==$row[0]){
+                        $SESSSION['id_compare']=$index_compare;
+                        break;
+                    }
+                $index_compare++;
+                };
+            }
+
+                if($SESSSION['id_compare']!==null){
+                    $change=unserialize($preparer[ $SESSSION['id_compare'] ]);
+                    $change=$change[1]++;
+                    $preparer[ $SESSSION['id_compare'] ]=serialize($change);
+                    $SESSSION['yellow']=implode("!",$preparer);
+                    $SESSSION['id_compare']=null;
+                }
+        
+                else{
+                    $statemet=$connection->prepare("SELECT * FROM {$produk_table_databases} WHERE `kode_produk`=$input_code ");
+                    $statemet->execute();
+                    $ready=$statemet->fetch(PDO::FETCH_ASSOC);
+                    // kode,unit,harga
+                    $go_may=["$ready[kode_produk]",1,$ready['harga']];
+                    $go_may=serialize($go_may);
+                    $SESSSION['yellow']=$SESSSION['yellow']."!".$go_may;
+                }
+
+
+            }
+        }
+    }
+
+
+    function navigator(){
+        if($_SERVER['REQUEST_METHOD']==="GET"){
+            if(isset($_GET['reciept'])){
+                header("location: view/print.view.php");
+            }
+            elseif(isset($_GET['cancel-all'])){
+                $SESSSION['yellow']=null;
+            }
+        }
+    }
+}
 ?>
