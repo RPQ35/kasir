@@ -3,7 +3,7 @@ session_start();
 
 include "table_used_in_data.php";
 // include 'db.php';
-// ini_set('display_errors', 0);
+ini_set('display_errors', 0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ include "table_used_in_data.php";
 <body>
 
     <?php
-    
+    // var_dump(explode("!",$_SESSION['yellow']));
     if ($_SESSION['login'] == true) { 
         // ->
         if($_SERVER['REQUEST_METHOD']==="POST"){

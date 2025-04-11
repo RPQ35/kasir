@@ -10,7 +10,7 @@ $system_databses="kasir";
 
 // =========== table =============//
 
-$produk_table_databases="produk";
+$produk_table_databases="product";
 // -> id   (int ,AI ,PK)
 // -> kode_produk (varchar[255],not null)
 // -> harga(int,not null)

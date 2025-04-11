@@ -9,6 +9,7 @@
 
     elseif($_SESSION['lupakan']=="log-out") {
         $_SESSION['login'] = false;
+        session_unset();
     }
 
     elseif($_SESSION['lupakan']=="cashier"){

@@ -1,8 +1,10 @@
 <?php
 include 'backside/cahier-system.php';
 $panggil=new Cahier_system;
-
-
+include "db.php";
+$panggil->inputer($connetion,$produk_table_databases);
+$panggil->minus();
+$panggil->navigator();
 ?>
 
 
