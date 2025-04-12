@@ -105,7 +105,6 @@ class Cahier_system{
             
             if(isset($_GET['reciept'])){
                 header("location: view/print.view.php");
-                header('Location: '.$_SERVER["PHP_SELF"], true, 303);
             }
             elseif(isset($_GET['cancel-all'])){
                 $_SESSION['yellow']='';

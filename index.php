@@ -1,9 +1,8 @@
 <?php
-session_start();
 
 include "table_used_in_data.php";
 // include 'db.php';
-ini_set('display_errors', 0);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +12,7 @@ ini_set('display_errors', 0);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="aset/logo.png" type="image/x-icon">
 </head>
 
 <body>

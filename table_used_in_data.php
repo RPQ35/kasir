@@ -34,5 +34,6 @@ $log_table_databases="log";
 // -> kode_struk(int ,not null)
 // -> kasir(varchar[255])
 
-
+session_start();
+ini_set('display_errors', 0);
 ?>
