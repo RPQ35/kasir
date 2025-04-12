@@ -2,6 +2,8 @@
 
 ?>
 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <article>
 
         <section class="s1">
@@ -43,10 +45,17 @@
                 </tbody>
             </table>
 
-            <div>
+            <div class="chart-container">
+                
+                <canvas id="BarChart">  </canvas>
 
             </div>
+
+            
         </section>
 
 
 </article>
+
+<script src="script.js"></script>
+
