@@ -2,7 +2,7 @@
 
 include "table_used_in_data.php";
 // include 'db.php';
-
+ini_set('display_errors', 0);       
 ?>
 <!DOCTYPE html>
 <html lang="en">
