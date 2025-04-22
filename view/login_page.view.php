@@ -36,21 +36,12 @@ function alert(){?>
 
 
 <?php
-
 if($_SERVER['REQUEST_METHOD']==="POST"){
     if(isset($_POST['login'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if($username=="poser"&&$password=="1234"){
-            $_SESSION['login']=true;
-            $_SESSION['user']=$username;
-            header('Location: '.$_SERVER["PHP_SELF"], true, 303);
-            $_POST['cashier']='a';
-            $_SESSION['lupakan']="cashier";
-        }else{
-            alert();
-            pssst();
-        }
+        $username = htmlspecialchars($_POST['username']);
+        $password = htmlspecialchars($_POST['password']);
+
+        include 'backside/login_system.php';
     }
 }
 ?>

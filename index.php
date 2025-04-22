@@ -1,6 +1,7 @@
 <?php
 
 include "table_used_in_data.php";
+include "db.php";
 // include 'db.php';
 ini_set('display_errors', 0);       
 ?>
