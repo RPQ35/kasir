@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,7 +134,14 @@
         }
     </style>
 </head>
-<?php include '../table_used_in_data.php'; ?>
+<?php include '../db.php';
+
+$get_struk=$connetion->prepare("SELECT *FROM {$log_table_databases} ORDER BY `tanggal` DESC LIMIT 1;");
+$get_struk-> execute();
+$struk=$get_struk-> fetch(PDO::FETCH_ASSOC);
+// var_dump ($struk);
+$_SESSION['struk']=$struk['kode_struk']+1;
+?>
 
 
 
@@ -194,8 +202,8 @@
             <h3 id="fater"><?= $d ?></h3>
         </div>
         <div>
-            <h3>cahier : <?=$user?></h3>
-            <h3>no struk :<?=$onlog?> </h3>
+            <h3>cahier : <?=$_SESSION['user']?></h3>
+            <h3>no struk :<?=$_SESSION['struk']?> </h3>
         </div>
     </footer>
 
@@ -214,8 +222,8 @@
             document.querySelector("footer").style.display="none";
 
             document.getElementById('back').addEventListener("click",function(){
-                window.location.href = "../index.php";
-            })
+                window.location.href = "../backside/print_log.php";
+        })
             document.getElementById('re_print').addEventListener("click",function(){
                 document.getElementById("pop_up").style.display="none";
                 document.querySelector("header").style.display="block";
