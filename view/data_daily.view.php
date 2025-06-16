@@ -1,5 +1,5 @@
 <?php
-
+include 'backside/data_shower.php';
 ?>
 
 
@@ -32,7 +32,21 @@
                         <td class="top-right"></td>
                     </tr>
 
-
+                    <?php
+                        $index=1;
+                    foreach($data_all->fetchAll(PDO::FETCH_ASSOC) as $f){
+                        ?>
+                            <tr>
+                                <td><?=$index?></td>
+                                <td><?=$f['kode_produk']?></td>
+                                <td><?=$f['harga']?></td>
+                                <td><?=$f['tanggal']?></td>
+                                <td><?=$f['kode_struk']?></td>
+                            </tr>
+                        <?php $index++;
+                    }
+                    
+                    ?>
 
 
                     <tr>
@@ -47,7 +61,9 @@
 
             <div class="chart-container">
                 
-                <canvas id="BarChart">  </canvas>
+                <canvas id="BarChart">
+                    
+            </canvas>
 
             </div>
 

@@ -9,7 +9,7 @@ foreach($loggers as $loge){
     var_dump($loge);
     $log_into=$connetion->prepare("INSERT INTO {$log_table_databases} VALUES (null,:kode_p ,:harga ,now(),:kode_s ,:kasir)");
     $log_into-> bindParam(':kode_p',$loge['0']);
-    $log_into-> bindParam(':harga',$loge['1']);
+    $log_into-> bindParam(':harga',$loge['2']);
     $log_into-> bindParam(':kode_s',$_SESSION['struk']);
     $log_into-> bindParam(':kasir',$_SESSION['user']);
     $log_into-> execute();
