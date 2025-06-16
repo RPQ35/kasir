@@ -1,6 +1,8 @@
     <?php
 
     // ========== sql thing ===================//
+    $databases="mysql";
+    $host="localhost";
     $username="root";
     $password="live";
     // ========================================//
